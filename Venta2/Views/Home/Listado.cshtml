@@ -1,0 +1,49 @@
+﻿
+
+
+
+@model IEnumerable<Venta2.Models.cliente>
+@{
+    ViewBag.Title = "Listado";
+}
+
+<h2>Listado</h2>
+
+
+<table class="table table-responsive table-bordered">
+
+    <thead>
+    <th>Rut</th>
+    <th>Nombre</th>
+    <th>Apellido</th>
+    <th>Tipo Cliente</th>
+    <th colspan="2">Action</th>
+
+
+
+    </thead>
+
+
+
+    <tbody>
+
+
+
+
+        @foreach (var Venta2 in Model)
+        {
+            <tr>
+
+                <td> @Venta2.Rut</td>
+                <td> @Venta2.Nombre</td>
+                <td> @Venta2.Apellido</td>
+                <td> @Venta2.Tipo_Cliente</td>
+                <td>@Html.ActionLink("Ver Ficha", "Ficha", new { Rut = Venta2.Rut })</td>
+
+            </tr>
+        }
+
+    </tbody>
+</table>
+
+
